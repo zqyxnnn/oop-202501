@@ -45,7 +45,7 @@ Melalui percobaan ini, mahasiswa diharapkan dapat memahami cara kerja masing-mas
 public class HelloProcedural {
    public static void main(String[] args) {
       String nim = "240202880";
-      String nama = "Ray";
+      String nama = "Fauzan";
       String[] produk = {"Kentang Goreng", "Ayam Goreng", "Bebek Goreng"};
       int[] harga = {10000, 15000, 18000};
       int total = 0;
@@ -136,7 +136,7 @@ Daftar Produk:
 - Bebek Goreng: 18000
 Total harga semua produk: 43000
 ```
-<img width="1199" height="291" alt="Cuplikan layar 2025-10-04 164831" src="https://github.com/user-attachments/assets/b54fea6c-0125-4e6b-859f-1b3ee67e8b18" />
+<img width="1202" height="287" alt="Cuplikan layar 2025-10-04 170710" src="https://github.com/user-attachments/assets/135929ec-0217-41a0-b206-b6741c112336" />
 
 Semua program menampilkan hasil yang sama, hanya berbeda dalam struktur dan cara penulisannya.
 
