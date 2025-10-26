@@ -1,73 +1,134 @@
-# Laporan Praktikum Minggu 1 (sesuaikan minggu ke berapa?)
-Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
-
-## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+# Laporan Praktikum Minggu 3
 
 ---
 
-## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+# **Topik:** Inheritance (Pewarisan dalam Pemrograman Berorientasi Objek)
 
 ---
 
-## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+## **Identitas**
+
+* **Nama**  : Zakkya Fauzan Alba’asithu
+* **NIM**   : 240202890
+* **Kelas** : 3IKRA
 
 ---
 
-## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+## **Tujuan**
+
+Mahasiswa memahami konsep *inheritance* (pewarisan) dalam pemrograman berorientasi objek (OOP) dan dapat mengimplementasikan pewarisan antar kelas pada sistem informasi produk pertanian seperti *Benih*, *Pupuk*, dan *Alat Pertanian*.
 
 ---
 
-## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
+## **Dasar Teori**
+
+1. **Inheritance (pewarisan)** adalah mekanisme OOP yang memungkinkan sebuah class mewarisi atribut dan method dari class lain (superclass).
+2. **Superclass** adalah class induk yang menyediakan atribut dan method yang dapat digunakan kembali oleh subclass.
+3. **Subclass** adalah class turunan yang mewarisi atribut dan method dari superclass serta dapat menambahkan atau mengubah perilakunya sendiri.
+4. **Polymorphism** memungkinkan pemanggilan method yang sama menghasilkan output berbeda tergantung objeknya.
+5. **Code reusability** menjadi keuntungan utama dari inheritance karena mengurangi duplikasi kode.
+
+---
+
+## **Langkah Praktikum**
+
+1. Buka project Java bernama **AgriPos** di IDE (misalnya IntelliJ IDEA atau NetBeans).
+2. Pastikan struktur package sesuai:
+
+   ```
+   com.upb.agripos
+   com.upb.agripos.model
+   com.upb.agripos.util
+   ```
+3. Buat file `MainInheritance.java` di package `com.upb.agripos`.
+4. Tambahkan kode berikut untuk mengimplementasikan konsep inheritance antara `Produk` (superclass) dan subclass `Benih`, `Pupuk`, `AlatPertanian`.
+5. Jalankan program untuk menampilkan deskripsi setiap produk dan identitas pembuat.
+6. Gunakan commit message:
+
+   ```
+   Implementasi Inheritance pada produk pertanian
+   ```
+
+---
+
+## **Kode Program**
 
 ```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
+package com.upb.agripos;
+
+import com.upb.agripos.model.*;
+import com.upb.agripos.util.CreditBy;
+
+public class MainInheritance {
+    public static void main(String[] args) {
+        Benih benih = new Benih("BNH-001", "Benih Padi IR64", 25000, 100, "IR64");
+        Pupuk pupuk = new Pupuk("PPK-101", "Pupuk Urea", 350000, 40, "Urea");
+        AlatPertanian alat = new AlatPertanian("ALT-501", "Cangkul Baja", 90000, 15, "Baja");
+
+        System.out.println(benih.deskripsi());
+        System.out.println(pupuk.deskripsi());
+        System.out.println(alat.deskripsi());
+
+        CreditBy.print("240202890", "Zakkya Fauzan Alba'asithu");
+    }
+}
 ```
-)
+
 ---
 
-## Hasil Eksekusi
-(Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
-)
+## **Hasil Eksekusi**
+
+Contoh output di terminal:
+
+```
+Produk: Benih Padi IR64
+Kode: BNH-001
+Harga: 25000
+Stok: 100
+Jenis Benih: IR64
+
+Produk: Pupuk Urea
+Kode: PPK-101
+Harga: 350000
+Stok: 40
+Jenis Pupuk: Urea
+
+Produk: Cangkul Baja
+Kode: ALT-501
+Harga: 90000
+Stok: 15
+Material: Baja
+
+Created by: Zakkya Fauzan Alba’asithu (240202890)
+```
+
+<img width="1919" height="1079" alt="Screenshot 2025-10-27 005242" src="https://github.com/user-attachments/assets/d113cf6f-4bcc-483c-a28d-956fda8ea144" />
+
+
 ---
 
-## Analisis
-(
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
-)
+## **Analisis**
+
+* Kode di atas memanfaatkan **inheritance** untuk menghubungkan class `Produk` (superclass) dengan `Benih`, `Pupuk`, dan `AlatPertanian` (subclass).
+* Masing-masing subclass meng-*override* method `deskripsi()` dari superclass untuk menampilkan informasi spesifik produknya.
+* Dibandingkan minggu sebelumnya (misalnya saat membahas *encapsulation*), minggu ini program menjadi lebih efisien karena tidak perlu menduplikasi atribut dan method umum pada setiap kelas produk.
+* Kendala yang sempat muncul adalah *error import package*, yang diatasi dengan memastikan struktur folder dan nama package sudah sesuai.
+
 ---
 
-## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+## **Kesimpulan**
+
+Dengan menerapkan konsep *inheritance*, kode program menjadi lebih **terstruktur**, **mudah dikembangkan**, dan **menghindari duplikasi**.
+Setiap produk pertanian dapat memiliki atribut dan perilaku khusus tanpa perlu menulis ulang atribut dasar yang sama dari class `Produk`.
 
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+(1. Apa keuntungan menggunakan inheritance dibanding membuat class terpisah tanpa hubungan?
+    **Jawaban:** Mengurangi duplikasi kode dan memudahkan pemeliharaan karena atribut dan method umum cukup dibuat sekali di superclass.  
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. Bagaimana cara subclass memanggil konstruktor superclass?  
+   **Jawaban:** Dengan menggunakan keyword super() di dalam konstruktor subclass
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. Berikan contoh kasus di POS pertanian selain Benih, Pupuk, dan Alat Pertanian yang bisa dijadikan subclass.
+   **Jawaban:** ObatHama, BibitSayur, atau PestisidaOrganik  )
